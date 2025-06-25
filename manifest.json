@@ -1,0 +1,51 @@
+{
+  "name": "github-downloads-mirror",
+  "author": "bc",
+  "title": "Github Downloads Mirror",
+  "description": "Accelerate github downloads",
+  "version": "1.0.0",
+  "homepage": "https://gopeed.com",
+  "repository": {
+    "url": "https://github.com/xBenChenx/extension-mirror"
+  },
+  "scripts": [
+    {
+      "event": "onResolve",
+      "match": {
+        "urls": [
+          "*://github.com/*/releases/*"
+        ]
+      },
+      "entry": "dist/index.js"
+    }
+  ],
+  "settings": [
+    {
+      "name": "ua",
+      "title": "User-Agent",
+      "description": "HTTP User-Agent header",
+      "type": "string",
+      "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36 Edg/117.0.2045.47"
+    },
+    {
+      "name": "mirror",
+      "title": "Github镜像源",
+      "type": "string",
+      "value": "https://gh-proxy.com/",
+      "options": [
+        {
+          "label": "goppx.com",
+          "value": "https://goppx.com/"
+        },
+        {
+          "label": "fastgit.cc",
+          "value": "https://fastgit.cc/"
+        },
+        {
+          "label": "moeyy.xyz",
+          "value": "https://github.moeyy.xyz/"
+        }
+      ]
+    }
+  ]
+}
